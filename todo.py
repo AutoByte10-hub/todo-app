@@ -1,20 +1,27 @@
 tasks = [] #seznam  úkolů
 while True:
-    command = input("Zadej prikaz (add/list/quit): ")
+    command = input("Enter command (add/list/remove/quit): ")
                 
     if command == "add":
-        task = input ("zadej ukol: ")
+        task = input ("Enter a Task: ")
         tasks.append(task)
-        print("Úkol přidán!")
+        print("Task added!")
 
     elif command == "list":
-        print("Seznam úkolů:")
+        print("Task list:")
         for t in tasks:
                 print("-", t)
-
+    elif command == "remove":
+        task = input("Enter task to remove: ")      
+        if task in tasks:
+             tasks.remove(task)
+             print("Task removed!") 
+        else:
+             print("Task not found!") 
     elif command =="quit":
-        print("Konec programu.")
-        break
+        print("Exiting program.")
+        break    
+    else:
+     print ("Unknown command")
+
     
-else:
-    print ("Neznámý příkaz")
